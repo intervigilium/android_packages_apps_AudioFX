@@ -29,7 +29,6 @@ import org.cyanogenmod.audiofx.R;
 import org.cyanogenmod.audiofx.activity.MasterConfigControl;
 import org.cyanogenmod.audiofx.knobs.KnobCommander;
 import org.cyanogenmod.audiofx.knobs.KnobContainer;
-import org.cyanogenmod.audiofx.stats.UserSession;
 
 public class ControlsFragment extends AudioFxBaseFragment {
 
@@ -44,9 +43,6 @@ public class ControlsFragment extends AudioFxBaseFragment {
             = new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (mConfig.getMaxxVolumeEnabled() != isChecked) {
-                UserSession.getInstance().maxxVolumeToggled();
-            }
             mConfig.setMaxxVolumeEnabled(isChecked);
         }
     };
